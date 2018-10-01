@@ -143,6 +143,7 @@ local ROLE_WORKER = "worker";
       workingDir: "/kubeflow/openmpi/data",
       command: $.controllerCommand(params, podName),
       env: $.controllerEnv(params),
+      resources: limits: { cpu: 1, memory: "8Gi" }, requests: { cpu: 1, memory: "8Gi" },
       volumeMounts: [
         {
           name: "openmpi-data",
